@@ -8,7 +8,7 @@ This editor makes extensive use of the [https://crowbarska.itch.io/eggbit-dungeo
 
 The font “PixGamer” by “Bryndan Meyerholt” is licensed under a Creative Commons Attribution No Derivatives license (http://creativecommons.org/licenses/by-nd/3.0/). The font can be found here: [https://www.fontspace.com/pixgamer-font-f85447](PixGamer Font)
 
-## Features (currently pre-alpha)
+## Features
 
 - Point and click tile placement
 - Multiple Tileset selection
@@ -17,15 +17,15 @@ The font “PixGamer” by “Bryndan Meyerholt” is licensed under a Creative 
 - Click and drag tile placement
 - show and hide grid
 
-### Future Features ( after alpha release)
+### Future Features
 
-- preset walls (e.g enter 2x4 to create a 2x4 room outline)
 - place random tiles
 - add a footer with credits
 - increase/decrease grid size and allow mobile users to pan/zoom
 - export to png
 - export/import json data
-- edit multiple levels in one session
+- CMD+Z undo
+- preset walls (e.g enter 2x4 to create a 2x4 room outline)
 - Tile mirroring
 - Tile selection
 - Tile rotation
@@ -34,8 +34,8 @@ The font “PixGamer” by “Bryndan Meyerholt” is licensed under a Creative 
 - CMD+C copy
 - CMD+V paste
 - CMD+X cut
-- CMD+Z undo
 - CMD+Y redo
+- edit multiple levels in one session
 - upload custom tilesets
 
 ## Project setup and local dev
