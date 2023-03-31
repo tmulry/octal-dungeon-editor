@@ -55,8 +55,6 @@ const onClick = () => {
 
 
 const onMouseOver = () => {
-    // todo this makes click handling VERY slow
-    // console.log('mouseOver', props.tilePosition, 'down?', props.mouseDown)
     if (props.mouseDown) {
         emit('tileClicked', props.tilePosition, props.tileData)
     }
@@ -66,17 +64,19 @@ const onMouseOver = () => {
 
 <style scoped>
 /* todo set colors as scss variables */
-svg.dark {
-    fill: #282a35b8;
-    stroke-width: 0;
-    stroke: #282a35b8;
+
+.background-tile.dark {
+    fill: #1b2632;
+    stroke-width: 1;
+    stroke: #1b2632;
 }
 
-svg.light {
-    fill: #2d2d2d;
-    stroke-width: 0;
-    stroke: #2d2d2d;
+.background-tile.light {
+    fill: #1b2632df;
+    stroke-width: 1;
+    stroke: #1b2632df;
 }
+
 
 svg.selected {
     stroke-width: 2;
@@ -91,39 +91,33 @@ svg.selected {
     position: static;
 }
 
-.lizard {
-    background-image: url("../assets/lizard.png");
-    background: url("../assets/lizard.png") no-repeat center;
-    background-size: cover;
-}
-
-/* todo move background images somewhere higher up the chain */
+/* todo move background images somewhere higher up the chain and/or set them via js instead of css */
 .evil-red {
-    background: url("../assets/EggBitDungeon/EggBitDungeon_EvilRed.png") 0px 0px no-repeat;
+    background: url("@/assets/EggBitDungeon/EggBitDungeon_EvilRed.png") 0px 0px no-repeat;
 }
 
 .monochrome {
-    background: url("../assets/EggBitDungeon/EggBitDungeon_Monochrome.png") 0px 0px no-repeat;
+    background: url("@/assets/EggBitDungeon/EggBitDungeon_Monochrome.png") 0px 0px no-repeat;
 }
 
 .cold-blue {
-    background: url("../assets/EggBitDungeon/EggBitDungeon_ColdBlue.png") 0px 0px no-repeat;
+    background: url("@/assets/EggBitDungeon/EggBitDungeon_ColdBlue.png") 0px 0px no-repeat;
 }
 
 .eerie-purple {
-    background: url("../assets/EggBitDungeon/EggBitDungeon_EeriePurple.png") 0px 0px no-repeat;
+    background: url("@/assets/EggBitDungeon/EggBitDungeon_EeriePurple.png") 0px 0px no-repeat;
 }
 
 .gred {
-    background: url("../assets/EggBitDungeon/EggBitDungeon_Gred.png") 0px 0px no-repeat;
+    background: url("@/assets/EggBitDungeon/EggBitDungeon_Gred.png") 0px 0px no-repeat;
 }
 
 .sandy-brown {
-    background: url("../assets/EggBitDungeon/EggBitDungeon_SandyBrown.png") 0px 0px no-repeat;
+    background: url("@/assets/EggBitDungeon/EggBitDungeon_SandyBrown.png") 0px 0px no-repeat;
 }
 
 .pixel-art {
-    background: url("../assets/PixelArt/PixelArtPalette.png") 0px 0px no-repeat;
+    background: url("@/assets/PixelArt/PixelArtPalette.png") 0px 0px no-repeat;
 }
 </style>
   

@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer color="black" location="right">
+  <v-navigation-drawer location="right">
     <v-list>
       <v-list-item title="Levels"></v-list-item>
     </v-list>

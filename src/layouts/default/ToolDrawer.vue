@@ -1,12 +1,28 @@
 <template>
-  <v-navigation-drawer permanent color="black">
+  <v-navigation-drawer permanent>
     <v-list>
       <v-list-item title="Tools"></v-list-item>
       <v-list-item>
-        <Palette :tile-set="activeToolSet.tileSet" @tile-type-selected="onSelectedTileType" />
+        <Palette :tile-set="store.activeToolSet.tileSet" />
       </v-list-item>
       <v-list-item>
         <ColorSelector @color-selected="onSelectedTileSet" />
+      </v-list-item>
+      <v-list-item>
+        <v-container>
+          <v-row @click="methods.toggleGrid" align="stretch">
+            <v-col cols="3" class="d-flex justify-center align-center">
+              <svg :class="{ 'grid-enabled': store.activeToolSet.showGrid }" :width="toolIconHeight"
+                :height="toolIconWidth">
+                <rect :width="toolIconHeight" :height="toolIconWidth" style="fill:none" />
+              </svg>
+            </v-col>
+
+            <v-col cols="9">
+              <button class="p1">{{ store.activeToolSet.showGrid ? 'Hide Grid' : 'Show Grid' }}</button>
+            </v-col>
+          </v-row>
+        </v-container>
       </v-list-item>
     </v-list>
   </v-navigation-drawer>
@@ -31,26 +47,27 @@ import Palette from '@/components/Palette.vue'
 import ColorSelector from '@/components/ColorSelector.vue';
 import { reactive } from 'vue';
 import { ToolSet } from '@/types/tool-set';
+import { injectStrict } from '@/utils/injectStrict';
+import { DataStoreKey } from '@/types/symbols'
 
 
-const activeToolSet: ToolSet = reactive({
-  tileSet: 'monochrome',
-  tileType: '00',
-  showGrid: true
-})
 
+const { store, methods } = injectStrict(DataStoreKey);
+
+
+
+const toolIconHeight = 32;
+const toolIconWidth = 32;
 
 const onSelectedTileSet = (selectedSet: string) => {
-  activeToolSet.tileSet = selectedSet
-  emit('toolSetUpdated', activeToolSet)
-
+  methods.setSelectedTileSet(selectedSet)
 }
 
-const emit = defineEmits(['toolSetUpdated'])
-
-const onSelectedTileType = (tileType: string) => {
-  activeToolSet.tileType = tileType
-  emit('toolSetUpdated', activeToolSet)
-}
 
 </script>
+
+<style scoped>
+.grid-enabled {
+  background: url("@/assets/ToolIcons/grid-enabled.png ") 0px 0px no-repeat;
+}
+</style>

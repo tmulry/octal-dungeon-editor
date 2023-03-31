@@ -30,7 +30,7 @@ const initColorSelector = () => {
     return makeGrid(colorSelectorRows, colorSelectorColumns, (rowIdx: number, colIdx: number): TileData => ({
         selected: false,
         visible: true,
-        tileType: '00',
+        tileType: colorSchemes[rowIdx * colorSelectorColumns + colIdx] === 'pixel-art' ? '00' : '33',
         tileSet: colorSchemes[rowIdx * colorSelectorColumns + colIdx]
     }));
 }
