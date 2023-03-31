@@ -17,6 +17,6 @@ command = "yarn build"
 # A basic redirect rule
 
 [[redirects]]
-from = "/\*"
+from = "/*"
 to = "/index.html"
 status = 200
