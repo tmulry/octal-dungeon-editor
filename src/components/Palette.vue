@@ -33,12 +33,17 @@ const initToolSet = () => {
 
 const toolSet = reactive(initToolSet())
 
+watch(() => store.activeToolSet.tileSet, (newTileSet, oldTileSet) => {
+    changeToolSet(toolSet, newTileSet)
+})
 
 const clickedTile = (coords: { y: number; x: number; }, data: TileData) => {
     clearGridSelection(toolSet)
     toolSet[coords.y][coords.x].selected = true
     methods.setSelectedTileType(data.tileType ? [data.tileType] : undefined)
 }
+
+
 
 methods.setSelectedTileType(['00'])
 
