@@ -68,6 +68,6 @@ const onSelectedTileSet = (selectedSet: string) => {
 
 <style scoped>
 .grid-enabled {
-  background: url("@/assets/ToolIcons/grid-enabled.png ") 0px 0px no-repeat;
+  background: url("@/assets/ToolIcons/grid-enabled.png") 0px 0px no-repeat;
 }
 </style>
