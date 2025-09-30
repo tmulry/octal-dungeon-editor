@@ -18,9 +18,8 @@
 
 <script lang="ts" setup>
 import DefaultBar from './AppBar.vue'
-import MapView from '../../components/MapView.vue'
+import MapView from '@/components/MapView.vue'
 import ToolDrawer from './ToolDrawer.vue'
 
 
 </script>
-

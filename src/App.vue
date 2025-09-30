@@ -3,7 +3,6 @@
 </template>
 
 <script lang="ts" setup>
-
 import Default from '@/layouts/default/Default.vue'
 import { provide } from 'vue';
 import store from '@/store'
