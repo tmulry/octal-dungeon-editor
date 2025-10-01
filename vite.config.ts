@@ -1,6 +1,7 @@
 // Plugins
 import vue from '@vitejs/plugin-vue'
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 
 // Utilities
 import { defineConfig } from 'vite'
@@ -19,6 +20,9 @@ export default defineConfig({
         configFile: 'src/styles/settings.scss',
       },
     }),
+    vueJsx({
+      // options are passed on to @vue/babel-plugin-jsx
+    })
   ],
   define: { 'process.env': {} },
   resolve: {

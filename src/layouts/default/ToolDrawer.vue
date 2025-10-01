@@ -3,7 +3,7 @@
     <v-list>
       <v-list-item title="Tools"></v-list-item>
       <v-list-item>
-        <Palette :tile-set="store.activeToolSet.tileSet" />
+        <Palette :data-store="{ store, methods, getters }" />
       </v-list-item>
       <v-list-item>
         <ColorSelector @color-selected="onSelectedTileSet" />
@@ -39,20 +39,19 @@
 // a checkbox can be checked to enter random tiles at a random rotation.
 // feature: pull presets from stone soup vaults https://github.com/crawl/crawl/blob/master/crawl-ref/source/dat/des/arrival/simple.des
 // feature: add a fill tool?
+// feature: add a "automatic border" tool?
 // feature: store previous grid state, and allow cmd+z (definitely a good use case for pinia)
 // feature: change grid size
 // new tile ideas: open door, deep and shallow water, tree
-
-import Palette from '@/components/Palette.vue'
+// figure out why I can import tsx files without an extension, but not vue files
+import Palette from '@/components/Palette'
 import ColorSelector from '@/components/ColorSelector.vue';
-import { reactive } from 'vue';
-import { ToolSet } from '@/types/tool-set';
 import { injectStrict } from '@/utils/injectStrict';
 import { DataStoreKey } from '@/types/symbols'
 
 
 
-const { store, methods } = injectStrict(DataStoreKey);
+const { store, methods, getters } = injectStrict(DataStoreKey);
 
 
 

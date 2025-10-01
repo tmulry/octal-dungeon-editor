@@ -2,8 +2,9 @@
     <v-container @mousedown="onMouseDown" @mouseup="onMouseUp" @mouseleave="onMouseUp">
         <v-row v-for="y in props.numRows" :key="y" no-gutters>
             <v-col v-for="x in props.numCols" :key="`[${x}, ${y}]`" no-gutters>
-                <TileSpace :mouse-down="mousedown" :size="16" :bg-theme="tileBgTheme(x, y)" @tile-clicked="onClickedTile"
-                    :tile-data="tileAt(x - 1, y - 1)" :tile-position="{ x: x - 1, y: y - 1 }" />
+                <TileSpace :mouse-down="mousedown" :size="16" :bg-theme="tileBgTheme(x, y)"
+                    @tile-clicked="onClickedTile" :tile-data="tileAt(x - 1, y - 1)"
+                    :tile-position="{ x: x - 1, y: y - 1 }" />
             </v-col>
         </v-row>
     </v-container>
